@@ -33,10 +33,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. User receives transaction confirmation with Solana Explorer link showing created token
   6. CLI displays clear error messages with remediation steps when transactions fail
 
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] TBD (will be defined during phase planning)
+- [ ] 01-01-PLAN.md - Project foundation: TypeScript setup, dependencies, module structure
+- [ ] 01-02-PLAN.md - Token core: SPL token creation with authority revocation
+- [ ] 01-03-PLAN.md - CLI integration: prompts, cost estimation, output formatting
 
 ### Phase 2: Professional Metadata
 **Goal**: Tokens display with logos and descriptions in wallets/explorers, and CLI explains operations for educational value
@@ -83,6 +85,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Security Foundation | 0/TBD | Not started | - |
+| 1. Security Foundation | 0/3 | Planned | - |
 | 2. Professional Metadata | 0/TBD | Not started | - |
 | 3. Advanced Features & Delivery | 0/TBD | Not started | - |
