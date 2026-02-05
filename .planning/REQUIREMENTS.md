@@ -73,13 +73,34 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (To be filled by roadmapper) | | |
+| TOKEN-01 | Phase 1 | Pending |
+| SEC-01 | Phase 1 | Pending |
+| SEC-02 | Phase 1 | Pending |
+| CLI-01 | Phase 1 | Pending |
+| CLI-02 | Phase 1 | Pending |
+| CLI-03 | Phase 1 | Pending |
+| CLI-04 | Phase 1 | Pending |
+| TOKEN-02 | Phase 2 | Pending |
+| TOKEN-03 | Phase 2 | Pending |
+| TOKEN-04 | Phase 2 | Pending |
+| SEC-03 | Phase 2 | Pending |
+| SEC-04 | Phase 2 | Pending |
+| CLI-05 | Phase 2 | Pending |
+| ADV-01 | Phase 3 | Pending |
+| DOC-01 | Phase 3 | Pending |
+| DOC-02 | Phase 3 | Pending |
+| DOC-03 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 16 total
-- Mapped to phases: (pending roadmap)
-- Unmapped: (pending roadmap)
+- Mapped to phases: 16/16 (100%)
+- Unmapped: 0
+
+**Phase Distribution:**
+- Phase 1 (Security Foundation): 7 requirements
+- Phase 2 (Professional Metadata): 6 requirements
+- Phase 3 (Advanced Features & Delivery): 3 requirements
 
 ---
 *Requirements defined: 2026-02-04*
-*Last updated: 2026-02-04 after initial definition*
+*Last updated: 2026-02-05 after roadmap creation*
