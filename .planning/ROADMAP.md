@@ -55,10 +55,13 @@ Plans:
   5. User can optionally revoke metadata update authority to lock token name/symbol permanently
   6. User can run dry-run mode to preview all operations without spending SOL
 
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] TBD (will be defined during phase planning)
+- [ ] 02-01-PLAN.md - IPFS service: Pinata integration for image and metadata JSON upload
+- [ ] 02-02-PLAN.md - Metadata service: Metaplex Token Metadata creation via Umi
+- [ ] 02-03-PLAN.md - Authority service: Status dashboard and metadata authority revocation
+- [ ] 02-04-PLAN.md - CLI integration: Educational output, dry-run mode, full metadata flow
 
 ### Phase 3: Advanced Features & Delivery
 **Goal**: Complete token lifecycle with burn mechanism and deliverables ready for class presentation
@@ -81,10 +84,10 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3
+Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Security Foundation | 3/3 | ✓ Complete | 2026-02-05 |
-| 2. Professional Metadata | 0/TBD | Not started | - |
+| 1. Security Foundation | 3/3 | Complete | 2026-02-05 |
+| 2. Professional Metadata | 0/4 | Ready to execute | - |
 | 3. Advanced Features & Delivery | 0/TBD | Not started | - |
