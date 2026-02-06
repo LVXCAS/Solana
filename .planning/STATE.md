@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-04)
 ## Current Position
 
 Phase: 1 of 3 (Security Foundation)
-Plan: 1 of TBD in current phase
+Plan: 2 of TBD in current phase
 Status: In progress
-Last activity: 2026-02-05 — Completed 01-01-PLAN.md (Project Initialization)
+Last activity: 2026-02-06 — Completed 01-02-PLAN.md (SPL Token Creation with Authority Revocation)
 
-Progress: [█░░░░░░░░░] ~10%
+Progress: [██░░░░░░░░] ~20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 4 min
-- Total execution time: 0.07 hours
+- Total plans completed: 2
+- Average duration: 3 min
+- Total execution time: 0.10 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01 (Security Foundation) | 1 | 4 min | 4 min |
+| 01 (Security Foundation) | 2 | 6 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4 min)
-- Trend: Just started
+- Last 5 plans: 01-01 (4 min), 01-02 (2 min)
+- Trend: Accelerating
 
 *Updated after each plan completion*
 
@@ -56,6 +56,13 @@ Recent decisions affecting current work:
 - Implemented validation functions immediately (simple logic, better than stubs)
 - ts-node ESM loader for development (Node 18 compatibility)
 
+**From Phase 01 Plan 02:**
+- Authority revocation uses null (not undefined) per SPL token standards
+- verifyAuthorities returns structured object for detailed verification
+- createToken performs all operations atomically (mint → supply → revoke)
+- Error messages include remediation steps for better DX
+- ~ expansion for standard Solana CLI paths
+
 ### Pending Todos
 
 None yet.
@@ -66,6 +73,7 @@ None yet.
 - Security patterns must be architectural from day one (signer checks, PDA design, CPI validation)
 - Integer overflow protection required in Cargo.toml from start
 - Compute unit requirements need measurement during testing (estimate 200K CU + 20% buffer)
+- Devnet testing requires Solana CLI installation and funded wallet (deferred to plan 03)
 
 **Phase 2 considerations:**
 - Pinata rate limits on free tier need validation when hitting upload volume
@@ -78,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-05 16:43:08 UTC
-Stopped at: Completed 01-01-PLAN.md (Project Initialization)
+Last session: 2026-02-06 00:47:42 UTC
+Stopped at: Completed 01-02-PLAN.md (SPL Token Creation with Authority Revocation)
 Resume file: None
