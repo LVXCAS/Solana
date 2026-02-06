@@ -5,6 +5,7 @@ import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { createCommand } from './commands/create.js';
+import { burnCommand } from './commands/burn.js';
 
 // Get package.json for version
 const __filename = fileURLToPath(import.meta.url);
@@ -20,5 +21,8 @@ program
 
 // Register create command
 createCommand(program);
+
+// Register burn command
+burnCommand(program);
 
 program.parse(process.argv);
