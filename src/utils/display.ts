@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import ora, { Ora } from 'ora';
 import { LAMPORTS_PER_SOL } from './constants.js';
 import { TokenResult } from '../lib/token.js';
+import { AuthorityStatus } from '../services/authority.js';
 
 /**
  * Format lamports as SOL with precision
@@ -157,4 +158,127 @@ export function displayTokenResult(result: TokenResult, cluster: string): void {
  */
 export function createSpinner(text: string): Ora {
   return ora(text);
+}
+
+/**
+ * Display token authority dashboard showing status of all three authority types
+ * @param status Authority status for mint, freeze, and metadata update
+ */
+export function displayAuthorityDashboard(status: AuthorityStatus): void {
+  console.log(chalk.cyan('\nToken Authority Dashboard\n'));
+
+  // Mint Authority
+  console.log(chalk.gray('  Mint Authority:'));
+  if (status.mint.isRevoked) {
+    console.log(
+      chalk.gray('    Status:      ') +
+        chalk.green('REVOKED') +
+        chalk.gray(' (supply is fixed)')
+    );
+    console.log(
+      chalk.gray('    Security:    ') +
+        chalk.gray('Cannot mint additional tokens')
+    );
+  } else {
+    const ownerLabel = status.mint.yours ? ' (yours)' : '';
+    const addressLabel = status.mint.yours
+      ? ''
+      : ` (${truncateAddress(status.mint.authority!)})`;
+    console.log(
+      chalk.gray('    Status:      ') +
+        chalk.yellow('ACTIVE') +
+        chalk.yellow(ownerLabel) +
+        chalk.gray(addressLabel)
+    );
+    console.log(
+      chalk.gray('    Security:    ') +
+        chalk.gray('Supply can still be increased')
+    );
+  }
+
+  // Freeze Authority
+  console.log(chalk.gray('\n  Freeze Authority:'));
+  if (status.freeze.isRevoked) {
+    console.log(
+      chalk.gray('    Status:      ') +
+        chalk.green('REVOKED') +
+        chalk.gray(' (no honeypot risk)')
+    );
+    console.log(
+      chalk.gray('    Security:    ') +
+        chalk.gray('Token accounts cannot be frozen')
+    );
+  } else {
+    const ownerLabel = status.freeze.yours ? ' (yours)' : '';
+    const addressLabel = status.freeze.yours
+      ? ''
+      : ` (${truncateAddress(status.freeze.authority!)})`;
+    console.log(
+      chalk.gray('    Status:      ') +
+        chalk.yellow('ACTIVE') +
+        chalk.yellow(ownerLabel) +
+        chalk.gray(addressLabel)
+    );
+    console.log(
+      chalk.gray('    Security:    ') +
+        chalk.gray('Accounts can be frozen (honeypot risk)')
+    );
+  }
+
+  // Metadata Update Authority
+  console.log(chalk.gray('\n  Metadata Update Authority:'));
+  if (status.metadataUpdate.authority === null && !status.metadataUpdate.isMutable) {
+    console.log(
+      chalk.gray('    Status:      ') +
+        chalk.green('REVOKED') +
+        chalk.gray(' (metadata immutable)')
+    );
+    console.log(
+      chalk.gray('    Security:    ') +
+        chalk.gray('Name/symbol cannot be changed')
+    );
+  } else if (status.metadataUpdate.authority === null) {
+    console.log(
+      chalk.gray('    Status:      ') +
+        chalk.gray('N/A') +
+        chalk.gray(' (no metadata account)')
+    );
+    console.log(
+      chalk.gray('    Security:    ') +
+        chalk.gray('Token has no metadata')
+    );
+  } else {
+    const ownerLabel = status.metadataUpdate.yours ? ' (yours)' : '';
+    const addressLabel = status.metadataUpdate.yours
+      ? ''
+      : ` (${truncateAddress(status.metadataUpdate.authority)})`;
+    console.log(
+      chalk.gray('    Status:      ') +
+        chalk.yellow('ACTIVE') +
+        chalk.yellow(ownerLabel) +
+        chalk.gray(addressLabel)
+    );
+    console.log(
+      chalk.gray('    Security:    ') +
+        chalk.gray('Name/symbol can still be changed')
+    );
+    if (status.metadataUpdate.yours) {
+      console.log(
+        chalk.gray('    Note:        ') +
+          chalk.yellow('Run with --lock-metadata to make immutable')
+      );
+    }
+  }
+
+  console.log();
+}
+
+/**
+ * Truncate address to first 4...last 4 characters
+ * @param address Full address string
+ * @returns Truncated address
+ */
+function truncateAddress(address: string): string {
+  if (address.length <= 8) return address;
+  return `${address.slice(0, 4)}...${address.slice(-4)}`;
 }
