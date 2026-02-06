@@ -13,7 +13,7 @@ This roadmap transforms a learning goal into a working Solana token creation too
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Security Foundation** - Token creation with anti-rug authority controls
-- [ ] **Phase 2: Professional Metadata** - Metaplex integration, IPFS, and educational UX
+- [x] **Phase 2: Professional Metadata** - Metaplex integration, IPFS, and educational UX
 - [ ] **Phase 3: Advanced Features & Delivery** - Burn mechanism and class deliverables
 
 ## Phase Details
@@ -58,10 +58,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md - IPFS service: Pinata integration for image and metadata JSON upload
-- [ ] 02-02-PLAN.md - Metadata service: Metaplex Token Metadata creation via Umi
-- [ ] 02-03-PLAN.md - Authority service: Status dashboard and metadata authority revocation
-- [ ] 02-04-PLAN.md - CLI integration: Educational output, dry-run mode, full metadata flow
+- [x] 02-01-PLAN.md - IPFS service: Pinata integration for image and metadata JSON upload
+- [x] 02-02-PLAN.md - Metadata service: Metaplex Token Metadata creation via Umi
+- [x] 02-03-PLAN.md - Authority service: Status dashboard and metadata authority revocation
+- [x] 02-04-PLAN.md - CLI integration: Educational output, dry-run mode, full metadata flow
 
 ### Phase 3: Advanced Features & Delivery
 **Goal**: Complete token lifecycle with burn mechanism and deliverables ready for class presentation
@@ -89,5 +89,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Security Foundation | 3/3 | Complete | 2026-02-05 |
-| 2. Professional Metadata | 0/4 | Ready to execute | - |
+| 2. Professional Metadata | 4/4 | Complete | 2026-02-05 |
 | 3. Advanced Features & Delivery | 0/TBD | Not started | - |
