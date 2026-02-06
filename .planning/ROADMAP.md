@@ -76,10 +76,12 @@ Plans:
   3. Code walkthrough documentation explains Anchor program structure and security patterns
   4. Presentation deck prepared explaining project, learning outcomes, and live demo script
 
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] TBD (will be defined during phase planning)
+- [ ] 03-01-PLAN.md - Burn mechanism: token burn logic, CLI command, educational UX
+- [ ] 03-02-PLAN.md - Documentation: comprehensive README and code walkthrough
+- [ ] 03-03-PLAN.md - Presentation: slide outline, demo script, and backup plans
 
 ## Progress
 
@@ -90,4 +92,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Security Foundation | 3/3 | Complete | 2026-02-05 |
 | 2. Professional Metadata | 4/4 | Complete | 2026-02-05 |
-| 3. Advanced Features & Delivery | 0/TBD | Not started | - |
+| 3. Advanced Features & Delivery | 0/3 | Not started | - |
