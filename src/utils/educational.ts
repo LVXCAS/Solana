@@ -55,4 +55,10 @@ export const EXPLANATIONS = {
     'Revoking freeze authority prevents honeypot attacks. Token accounts cannot be frozen, ensuring free trading.',
   metadataAuthority:
     'Revoking metadata authority locks name/symbol permanently. This is IRREVERSIBLE - choose carefully.',
+  burnLookup:
+    'Solana stores tokens in Associated Token Accounts (ATAs), not directly in wallets. We need to find your ATA for this specific token.',
+  burnExecute:
+    'Burning permanently removes tokens from circulation by sending them to a null address. The mint total supply decreases on-chain.',
+  burnVerify:
+    'We verify the burn on-chain by checking the mint supply decreased by the expected amount. Trust, but verify.',
 };

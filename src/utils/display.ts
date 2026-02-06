@@ -3,6 +3,7 @@ import ora, { Ora } from 'ora';
 import { LAMPORTS_PER_SOL } from './constants.js';
 import { TokenResult } from '../lib/token.js';
 import { AuthorityStatus } from '../services/authority.js';
+import { BurnResult } from '../lib/burn.js';
 
 /**
  * Format lamports as SOL with precision
@@ -303,4 +304,40 @@ export function displayMetadataResult(
     chalk.gray('  On-chain:      ') +
       chalk.blue(getExplorerUrl(metadataAccount, cluster))
   );
+}
+
+/**
+ * Display burn result with supply verification
+ * @param result Burn operation result
+ * @param cluster Network cluster
+ */
+export function displayBurnResult(result: BurnResult, cluster: string): void {
+  console.log(chalk.green.bold('\n✓ Tokens Burned Successfully!\n'));
+
+  // Burn details
+  console.log(chalk.gray('Amount Burned:  ') + chalk.white(result.amountBurned.toString()));
+  console.log(chalk.gray('Mint Address:   ') + chalk.white(result.mint));
+
+  // Supply verification
+  console.log(chalk.cyan('\nSupply Verification:'));
+  console.log(chalk.gray('  Before:         ') + chalk.white(result.supplyBefore.toString()));
+  console.log(chalk.gray('  After:          ') + chalk.white(result.supplyAfter.toString()));
+
+  // Calculate percentage burned
+  const actualBurned = result.supplyBefore - result.supplyAfter;
+  const percentBurned = (Number(actualBurned) / Number(result.supplyBefore)) * 100;
+  console.log(chalk.gray('  Percent burned: ') + chalk.white(percentBurned.toFixed(2) + '%'));
+
+  // Transaction link
+  console.log(
+    chalk.cyan('\nTransaction: ') +
+      chalk.blue(getExplorerUrl(result.signature, cluster))
+  );
+
+  // Token link
+  console.log(
+    chalk.cyan('View token:  ') +
+      chalk.blue(getExplorerAddressUrl(result.mint, cluster))
+  );
+  console.log();
 }
