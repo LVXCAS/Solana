@@ -1,5 +1,7 @@
 import { input, number, confirm } from '@inquirer/prompts';
+import chalk from 'chalk';
 import { TokenConfig } from '../lib/token.js';
+import { validateImagePath } from './validation.js';
 
 /**
  * Prompt user for token configuration parameters
@@ -71,6 +73,16 @@ export async function promptTokenConfig(
     config.supply = Number(supplyInput);
   }
 
+  // Prompt for description if not provided
+  if (!config.description) {
+    config.description = await promptDescription();
+  }
+
+  // Prompt for image path if not provided
+  if (config.imagePath === undefined) {
+    config.imagePath = await promptImagePath();
+  }
+
   return config as TokenConfig;
 }
 
@@ -82,6 +94,59 @@ export async function promptTokenConfig(
 export async function promptConfirmation(message: string): Promise<boolean> {
   return await confirm({
     message,
+    default: false,
+  });
+}
+
+/**
+ * Prompt user for token description
+ * @returns Token description (or default if skipped)
+ */
+export async function promptDescription(): Promise<string> {
+  const description = await input({
+    message: 'Token description (for explorers/wallets):',
+    default: 'Created with Memecoin Factory',
+  });
+
+  return description || 'Created with Memecoin Factory';
+}
+
+/**
+ * Prompt user for token logo image path
+ * @returns Image path or undefined if skipped
+ */
+export async function promptImagePath(): Promise<string | undefined> {
+  const imagePath = await input({
+    message: 'Token logo path (png/jpg, optional - press enter to skip):',
+  });
+
+  // If empty, skip metadata
+  if (!imagePath || imagePath.trim() === '') {
+    return undefined;
+  }
+
+  // Validate the image path
+  const validation = await validateImagePath(imagePath.trim());
+
+  if (!validation.valid) {
+    console.error(chalk.red('\n✗ ' + validation.error));
+    console.log(chalk.yellow('Please provide a valid image path or press enter to skip.\n'));
+    // Re-prompt
+    return await promptImagePath();
+  }
+
+  return imagePath.trim();
+}
+
+/**
+ * Prompt user to lock metadata permanently
+ * @returns True if user wants to lock metadata, false otherwise
+ */
+export async function promptLockMetadata(): Promise<boolean> {
+  console.log(chalk.yellow('\nNote: Locking metadata is IRREVERSIBLE'));
+
+  return await confirm({
+    message: 'Lock metadata permanently? (name/symbol cannot be changed)',
     default: false,
   });
 }
