@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts"
+    "dev": "node --loader ts-node/esm src/index.ts"
   },
   "keywords": ["solana", "spl-token", "cli", "memecoin"],
   "author": "",
@@ -25,5 +25,9 @@
     "@types/node": "^25.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   }
 }
