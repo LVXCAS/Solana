@@ -9,17 +9,26 @@
     "start": "node dist/index.js",
     "dev": "node --loader ts-node/esm src/index.ts"
   },
-  "keywords": ["solana", "spl-token", "cli", "memecoin"],
+  "keywords": [
+    "solana",
+    "spl-token",
+    "cli",
+    "memecoin"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@metaplex-foundation/mpl-token-metadata": "^3.4.0",
+    "@metaplex-foundation/umi": "^1.4.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^1.4.1",
     "@solana/spl-token": "^0.4.14",
     "@solana/web3.js": "^1.98.4",
     "bs58": "^5.0.0",
     "chalk": "^5.6.2",
     "commander": "^12.1.0",
     "inquirer": "^10.2.2",
-    "ora": "^8.2.0"
+    "ora": "^8.2.0",
+    "pinata": "^2.5.3"
   },
   "devDependencies": {
     "@types/node": "^25.2.1",
