@@ -7,24 +7,24 @@
 
 ### Token Creation
 
-- [ ] **TOKEN-01**: Create SPL tokens with configurable name (1-32 chars), symbol (1-10 chars), decimals (0-9), and supply
+- [x] **TOKEN-01**: Create SPL tokens with configurable name (1-32 chars), symbol (1-10 chars), decimals (0-9), and supply
 - [ ] **TOKEN-02**: Add Metaplex metadata to tokens (name, symbol, description, image URI)
 - [ ] **TOKEN-03**: Upload token logos to IPFS via Pinata API with permanent storage
 - [ ] **TOKEN-04**: Display step-by-step explanations of each operation for educational transparency
 
 ### Security & Anti-Rug
 
-- [ ] **SEC-01**: Revoke mint authority after token creation to prevent unlimited minting
-- [ ] **SEC-02**: Revoke freeze authority to prevent honeypot attacks
+- [x] **SEC-01**: Revoke mint authority after token creation to prevent unlimited minting
+- [x] **SEC-02**: Revoke freeze authority to prevent honeypot attacks
 - [ ] **SEC-03**: Optionally revoke metadata update authority to lock name/symbol permanently
 - [ ] **SEC-04**: Display authority status dashboard showing which authorities are active/revoked
 
 ### CLI Interface
 
-- [ ] **CLI-01**: Interactive prompts for token parameters with input validation
-- [ ] **CLI-02**: Cost estimation before execution (rent + Metaplex fees in SOL)
-- [ ] **CLI-03**: Transaction confirmation with Solana Explorer links
-- [ ] **CLI-04**: Clear error messages with remediation steps (e.g., "Need X more SOL")
+- [x] **CLI-01**: Interactive prompts for token parameters with input validation
+- [x] **CLI-02**: Cost estimation before execution (rent + Metaplex fees in SOL)
+- [x] **CLI-03**: Transaction confirmation with Solana Explorer links
+- [x] **CLI-04**: Clear error messages with remediation steps (e.g., "Need X more SOL")
 - [ ] **CLI-05**: Dry-run mode to preview operations without executing transactions
 
 ### Advanced Operations
@@ -73,13 +73,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TOKEN-01 | Phase 1 | Pending |
-| SEC-01 | Phase 1 | Pending |
-| SEC-02 | Phase 1 | Pending |
-| CLI-01 | Phase 1 | Pending |
-| CLI-02 | Phase 1 | Pending |
-| CLI-03 | Phase 1 | Pending |
-| CLI-04 | Phase 1 | Pending |
+| TOKEN-01 | Phase 1 | Complete |
+| SEC-01 | Phase 1 | Complete |
+| SEC-02 | Phase 1 | Complete |
+| CLI-01 | Phase 1 | Complete |
+| CLI-02 | Phase 1 | Complete |
+| CLI-03 | Phase 1 | Complete |
+| CLI-04 | Phase 1 | Complete |
 | TOKEN-02 | Phase 2 | Pending |
 | TOKEN-03 | Phase 2 | Pending |
 | TOKEN-04 | Phase 2 | Pending |
