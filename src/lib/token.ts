@@ -17,6 +17,9 @@ export interface TokenConfig {
   symbol: string;
   decimals: number;
   supply: number;
+  // Optional metadata (Phase 2)
+  description?: string;
+  imagePath?: string;
 }
 
 /**
