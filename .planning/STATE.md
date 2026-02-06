@@ -10,17 +10,17 @@ See: .planning/PROJECT.md (updated 2026-02-04)
 ## Current Position
 
 Phase: 2 of 3 (Professional Metadata)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-02-05 — Completed 02-01-PLAN.md (IPFS Storage Integration)
+Last activity: 2026-02-05 — Completed 02-02-PLAN.md (Metadata Creation with Metaplex)
 
-Progress: [████░░░░░░] ~40% (4 plans complete)
+Progress: [█████░░░░░] ~50% (5 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 3 min
+- Total plans completed: 5
+- Average duration: 2 min
 - Total execution time: 0.18 hours
 
 **By Phase:**
@@ -28,11 +28,11 @@ Progress: [████░░░░░░] ~40% (4 plans complete)
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 (Security Foundation) | 3 | 9 min | 3 min |
-| 02 (Professional Metadata) | 1 | 2 min | 2 min |
+| 02 (Professional Metadata) | 2 | 4 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4 min), 01-02 (2 min), 01-03 (3 min), 02-01 (2 min)
-- Trend: Excellent (2-4 min range, improving)
+- Last 5 plans: 01-02 (2 min), 01-03 (3 min), 02-01 (2 min), 02-02 (2 min)
+- Trend: Excellent (2-3 min range, consistent)
 
 *Updated after each plan completion*
 
@@ -78,6 +78,12 @@ Recent decisions affecting current work:
 - Error remediation hints follow Phase 1 display.ts patterns
 - Metadata JSON structure follows Metaplex Token Standard
 
+**From Phase 02 Plan 02:**
+- Use Umi createV1 helper (not deprecated CreateMetadataAccountV3)
+- Set sellerFeeBasisPoints to 0 for fungible tokens
+- Make metadata fields optional in TokenConfig to preserve Phase 1 compatibility
+- Transaction signature as metadata account reference
+
 ### Pending Todos
 
 None yet.
@@ -106,9 +112,15 @@ None yet.
 - ✓ Metaplex dependencies installed (@metaplex-foundation/umi, mpl-token-metadata)
 - ✓ Pinata SDK (v2.5.3) installed and configured
 
+**Phase 2 Plan 02 (Metadata Creation) - COMPLETE:**
+- ✓ Metaplex metadata service created (createTokenMetadata)
+- ✓ Umi createV1 helper for on-chain metadata attachment
+- ✓ TokenConfig extended with optional description/imagePath fields
+- ✓ Error remediation hints for metadata creation failures
+- ✓ Two-tier storage pattern: image IPFS → metadata JSON IPFS → on-chain URI
+
 **Phase 2 remaining work:**
 - Pinata API key (PINATA_JWT) must be set before IPFS operations
-- Metadata account creation with Metaplex (Plan 02)
 - CLI integration for image upload and metadata creation (Plan 03)
 - Authority dashboard showing mint/freeze/metadata update status
 - Metaplex metadata account size varies by content length (measure actual rent costs)
@@ -121,7 +133,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-05 21:27:40 UTC
-Stopped at: Completed Phase 2 Plan 01 (IPFS Storage Integration)
+Last session: 2026-02-05 21:39:12 UTC
+Stopped at: Completed Phase 2 Plan 02 (Metadata Creation with Metaplex)
 Resume file: None
-Next up: Phase 2 Plan 02 (Metadata Creation with Metaplex)
+Next up: Phase 2 Plan 03 (CLI Integration)
