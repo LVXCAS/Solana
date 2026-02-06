@@ -29,13 +29,13 @@
 
 ### Advanced Operations
 
-- [ ] **ADV-01**: Burn mechanism to reduce token supply from creator's wallet
+- [x] **ADV-01**: Burn mechanism to reduce token supply from creator's wallet
 
 ### Class Deliverables
 
-- [ ] **DOC-01**: Comprehensive README with setup instructions, usage examples, architecture explanation
-- [ ] **DOC-02**: Code walkthrough documentation explaining Anchor program structure
-- [ ] **DOC-03**: Presentation deck for class explaining project and learning outcomes
+- [x] **DOC-01**: Comprehensive README with setup instructions, usage examples, architecture explanation
+- [x] **DOC-02**: Code walkthrough documentation explaining Anchor program structure
+- [x] **DOC-03**: Presentation deck for class explaining project and learning outcomes
 
 ## v2 Requirements
 
@@ -86,10 +86,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEC-03 | Phase 2 | Complete |
 | SEC-04 | Phase 2 | Complete |
 | CLI-05 | Phase 2 | Complete |
-| ADV-01 | Phase 3 | Pending |
-| DOC-01 | Phase 3 | Pending |
-| DOC-02 | Phase 3 | Pending |
-| DOC-03 | Phase 3 | Pending |
+| ADV-01 | Phase 3 | Complete |
+| DOC-01 | Phase 3 | Complete |
+| DOC-02 | Phase 3 | Complete |
+| DOC-03 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 16 total
