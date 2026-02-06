@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { createCommand } from './commands/create.js';
 
 // Get package.json for version
 const __filename = fileURLToPath(import.meta.url);
@@ -17,11 +18,7 @@ program
   .description('CLI tool for creating SPL tokens on Solana with anti-rug features')
   .version(packageJson.version);
 
-program
-  .command('create')
-  .description('Create a new SPL token with metadata')
-  .action(() => {
-    console.log('Token creation coming in Plan 02');
-  });
+// Register create command
+createCommand(program);
 
 program.parse(process.argv);
