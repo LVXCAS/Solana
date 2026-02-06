@@ -282,3 +282,25 @@ function truncateAddress(address: string): string {
   if (address.length <= 8) return address;
   return `${address.slice(0, 4)}...${address.slice(-4)}`;
 }
+
+/**
+ * Display metadata creation result with IPFS URIs and metadata account
+ * @param imageUri IPFS URI of uploaded image
+ * @param metadataUri IPFS URI of metadata JSON
+ * @param metadataAccount Metadata account address (transaction signature)
+ * @param cluster Network cluster
+ */
+export function displayMetadataResult(
+  imageUri: string,
+  metadataUri: string,
+  metadataAccount: string,
+  cluster: string
+): void {
+  console.log(chalk.cyan('\nMetadata:'));
+  console.log(chalk.gray('  Image IPFS:    ') + chalk.blue(imageUri));
+  console.log(chalk.gray('  Metadata IPFS: ') + chalk.blue(metadataUri));
+  console.log(
+    chalk.gray('  On-chain:      ') +
+      chalk.blue(getExplorerUrl(metadataAccount, cluster))
+  );
+}
